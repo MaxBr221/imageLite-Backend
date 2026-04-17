@@ -30,13 +30,17 @@ public class Image {
     private ImageExtension extesion;
     @Column
     @CreatedDate
-
     private LocalDateTime uploadTime;
     @Column
     private String tags;
     @Column
     @Lob
     private byte[] file;
+
+    public String getFileName(){
+        return getName().concat(".").concat(getExtesion().name());
+    }
+
 
 
 }
